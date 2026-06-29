@@ -58,7 +58,7 @@ comparative-study-amazonian-nmt/
     │   └── 3_Entrenamiento_NLLB_v4.ipynb
     └── Yine/
         ├── 2_Entrenamiento_mBART50_v4.ipynb
-        ├── 2_Entrenamiento_mT5_v4 .ipynb   # (Nota: archivo contiene un espacio en su nombre)
+        ├── 2_Entrenamiento_mT5_v4 .ipynb
         └── 2_Entrenamiento_NLLB_v4.ipynb
 ```
 
@@ -77,6 +77,9 @@ Para cada lengua, se procesan los datos crudos y se realiza:
 
 ### 2. Extensión del Tokenizador ([2_tokenizer_extension/](file:///c:/Users/Miguel/Desktop/comparative-study-amazonian-nmt/2_tokenizer_extension/))
 Se implementan estrategias de segmentación y silabeo (v1, v2 y v3) específicas para el Shipibo-Konibo con el fin de ampliar el vocabulario original del tokenizador preentrenado (de mBART50). Esto permite reducir la fragmentación excesiva y mejorar la representación de unidades léxicas en lenguas polisintéticas con morfología compleja.
+
+*Nota: Esta carpeta y sus archivos no se ejecutan como parte del flujo de trabajo de entrenamiento habitual; su propósito es evidenciar los pasos y sustento experimental de la sección 3.1 de la tesis. Para ejecutar el pipeline principal, solo deben correrse los archivos de preprocesamiento (`1_preprocessing`) y posteriormente los cuadernos de entrenamiento (`3_training`).*
+
 
 ### 3. Entrenamiento y Evaluación ([3_training/](file:///c:/Users/Miguel/Desktop/comparative-study-amazonian-nmt/3_training/))
 La metodología de experimentación en los cuadernos consta de **dos fases**:
@@ -125,8 +128,8 @@ pip install transformers[torch] datasets evaluate sacrebleu unbabel-comet bert-s
 1.  **Limpieza de Datos**:
     *   Navegue al directorio de preprocesamiento del idioma deseado (p. ej., [1_preprocessing/Shipibo-Konibo/](file:///c:/Users/Miguel/Desktop/comparative-study-amazonian-nmt/1_preprocessing/Shipibo-Konibo/)).
     *   Ejecute el script `1_limpieza_de_datos.py` para generar los archivos `corpus.csv`, `train.csv`, `val.csv` y `test.csv` a partir del corpus crudo.
-2.  **Aumento del Tokenizador (Opcional)**:
-    *   Para experimentos con vocabulario extendido en Shipibo-Konibo, ejecute las rutinas de la carpeta [2_tokenizer_extension/](file:///c:/Users/Miguel/Desktop/comparative-study-amazonian-nmt/2_tokenizer_extension/).
+2.  **Extensión del Tokenizador (Evidencia)**:
+    *   Esta etapa no es ejecutable dentro del flujo ordinario de entrenamiento. Su propósito es evidenciar de manera teórica e ilustrativa las pruebas de silabeo y vocabulario presentadas en la sección 3.1 de la tesis. Para la reproducción del pipeline de traducción, puede omitirse y pasar directamente al entrenamiento.
 3.  **Fine-Tuning y Reentrenamiento**:
     *   Abra el cuaderno Jupyter correspondiente de la carpeta [3_training/](file:///c:/Users/Miguel/Desktop/comparative-study-amazonian-nmt/3_training/) (por ejemplo, [3_Entrenamiento_NLLB_v4.ipynb](file:///c:/Users/Miguel/Desktop/comparative-study-amazonian-nmt/3_training/Shipibo-Konibo/3_Entrenamiento_NLLB_v4.ipynb)) en Google Colab o su entorno local.
     *   Configure la variable `base_path` apuntando al almacenamiento correspondiente.
