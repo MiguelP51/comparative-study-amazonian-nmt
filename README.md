@@ -7,7 +7,7 @@ Este repositorio contiene los pipelines de preprocesamiento, extensión de token
 
 ---
 
-## 📋 Lenguas y Modelos Evaluados
+## Lenguas y Modelos Evaluados
 
 *   **Lenguas Amazónicas**:
     *   **Shipibo-Konibo** (Familia Pano)
@@ -25,7 +25,7 @@ Este repositorio contiene los pipelines de preprocesamiento, extensión de token
 
 ---
 
-## 📂 Estructura del Repositorio
+## Estructura del Repositorio
 
 El repositorio se organiza de forma secuencial de acuerdo al pipeline de experimentación:
 
@@ -64,7 +64,7 @@ comparative-study-amazonian-nmt/
 
 ---
 
-## ⚙️ Pipeline de Trabajo
+## Pipeline de Trabajo
 
 ### 1. Preprocesamiento ([1_preprocessing/](file:///c:/Users/Miguel/Desktop/comparative-study-amazonian-nmt/1_preprocessing/))
 Para cada lengua, se procesan los datos crudos y se realiza:
@@ -85,7 +85,7 @@ La metodología de experimentación en los cuadernos consta de **dos fases**:
 
 ---
 
-## 📊 Resultados y Métricas Finales (Conjunto de Prueba)
+## Resultados y Métricas Finales (Conjunto de Prueba)
 
 A continuación se resumen los resultados obtenidos en el conjunto de test independiente (`test.csv`):
 
@@ -111,7 +111,7 @@ A continuación se resumen los resultados obtenidos en el conjunto de test indep
 
 ---
 
-## 🚀 Guía de Reproducción para Investigadores
+## Guía de Reproducción para Investigadores
 
 Si desea reproducir, validar o extender estos experimentos, siga estas instrucciones:
 
